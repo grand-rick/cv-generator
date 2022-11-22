@@ -1,0 +1,17 @@
+:root {
+  --theme-color: #2F0743;
+  --light-color: #d4e0ff;
+  --body-background: #333399;
+}
+
+body {
+  font-size: 2rem;
+  padding: 1.5rem;
+  background-color: #000;
+  color: var(--light-color);
+}
+
+.home-title, .form-title {
+  font-size: 2.5rem;
+  margin-right: 2rem;
+}
