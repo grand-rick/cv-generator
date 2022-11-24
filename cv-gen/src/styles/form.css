@@ -75,3 +75,14 @@ button:hover {
     background-color: var(--purple);
     color: #ECE9E6;
 }
+
+.avatar-block {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.login-form-input textarea {
+    padding-left: 1rem;
+}

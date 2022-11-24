@@ -1,9 +1,46 @@
 import {useLocation} from 'react-router-dom';
 import '../styles/cv.css';
 
+const Line = () => {
+    const styles = {
+        backgroundColor: '#ff0084',
+        color: '#ff0084',
+        width: '60%',
+        height: '.5rem',
+        marginLeft: 'auto'
+        // position: 'absolute',
+        // right: 0,
+        // top: '6.8rem'
+    }
+
+    return (
+        <hr style={styles}/>
+    )
+}
+
 const Cv = () => {
     const location = useLocation();
-    const {firstName, lastName, title, email, mobile, address, country, portfolio, twitter, school, schoolStart, schoolEnd, course, grade, skill1, skill2, skill3} = location.state;
+    const {
+        firstName,
+        lastName, 
+        title, 
+        email, 
+        mobile, 
+        address, 
+        country, 
+        avatar,
+        portfolio, 
+        bio, 
+        twitter, 
+        school, 
+        schoolStart, 
+        schoolEnd, 
+        course, 
+        grade, 
+        skill1,
+        skill2, 
+        skill3 
+    } = location.state;
 
     const skills = [skill1, skill2, skill3];
     const skillsFormatted = skills.map(skill => <li key={skill}>{skill}</li>)
@@ -12,8 +49,15 @@ const Cv = () => {
         <main>
             <div className='cv-wrapper'>
                 <div className='userDetails'>
-                    <div className='name'>{firstName} <span>{lastName}</span></div>
-                    <div className='title'>{title}</div>
+                    <div className='avatar'>
+                        <img src={avatar} alt='avatar' width='100px' />
+                    </div>
+                    <div className='rightUserDetails'>
+                        <span className='name'>{firstName} <span className='lastName'>{lastName}</span> </span><br />
+                        <span>{title}</span> <br />
+                        <Line />
+                        <span className='bio'>{bio}</span>
+                    </div>
                 </div>
                 <div className='contact-details'>
                     <div className='contact'>

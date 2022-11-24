@@ -12,7 +12,9 @@ class Form extends Component {
         lastName: '',
         title: '',
         email: '',
+        avatar: '',
         portfolio: '',
+        bio: '',
         twitter: '',
         mobile: NaN,
         address: '',
@@ -35,26 +37,13 @@ class Form extends Component {
     }
 
     handleChange = (e) => {
-        const {name, value } = e.target;
+        const {name, value, type } = e.target;
 
-        // if (name === 'email') {
-        //     const email = validator.isEmail(value);
-        //     let errorMessage = '';
-
-        //     if (!email) {
-        //         errorMessage = 'Invalid Email';
-        //     } else {
-        //         errorMessage = '';
-        //     }
-
-        //     this.setState({
-        //         errorMessage,
-        //     })
-        // }
-
-        this.setState({
-            [name]: value
-        })
+        if (type === 'file') {
+            this.setState({ [name]: e.target.files[0] })
+        } else {
+        this.setState({ [name]: value })
+        }
     }
 
     render () {
@@ -69,7 +58,7 @@ class Form extends Component {
                                 <h2 class="login-form-title mb-3">Personal Details</h2>
                                 <div className='login-form-block'>
                                     <div className="login-form-input mb-3">
-                                        <input type="text" name="firstName" id="firstName" placeholder="First Name" onChange={this.handleChange} value={this.state.firstName} autofocus required />
+                                        <input type="text" name="firstName" id="firstName" placeholder="First Name" onChange={this.handleChange} value={this.state.firstName} required />
                                     </div>
                                     <div className="login-form-input mb-3">
                                         <input type="text" name="lastName" id="lastName" placeholder="Last Name" onChange={this.handleChange} value={this.state.lastName} required />
@@ -95,7 +84,23 @@ class Form extends Component {
                                     <div className="login-form-input mb-3">
                                         <input type="text" name="country" id="country" placeholder="Country" value={this.state.country} onChange={this.handleChange} />
                                     </div>
+                                    <div className="login-form-input mb-3 avatar-block">
+                                        <label htmlFor='avatar'><span>Avatar</span></label>
+                                        <input type="file" name="avatar" id="avatar" placeholder="Avatar" />
+                                    </div>
                                 </div>
+                                <div className="login-form-input mb-3">
+                                        <textarea 
+                                        id='bio'
+                                        name='bio'
+                                        rows='5'
+                                        cols='30'
+                                        minLength='10'
+                                        maxLength='100'
+                                        placeholder='Write a short Description about yourself'
+                                        value={this.state.bio}
+                                        onChange={this.handleChange} />
+                                    </div>
                                 <h2 class="login-form-title mb-3">Education</h2>
                                 <div className='login-form-block'>
                                     <div className="login-form-input mb-3">

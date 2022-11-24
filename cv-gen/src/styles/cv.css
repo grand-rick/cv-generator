@@ -21,18 +21,28 @@ main {
     padding: 0.5rem;
     color: #fff;
     text-transform: uppercase;
-    text-align: right;
-}
-.userDetails div span {
-    color: darkturquoise;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
 }
 
-.userDetails div.name {
+.userDetails .rightUserDetails {
+    padding: 0.5rem;
+    text-align: right;
+}
+
+.userDetails .rightUserDetails .name {
     font-size: 3rem;
 }
 
-.userDetails div.title {
+.userDetails .rightUserDetails .lastName {
+    color: darkturquoise;
+}
 
+.userDetails .rightUserDetails .bio {
+    font-size: 1.5rem;
+    text-transform: lowercase;
 }
 
 .contact-details {
