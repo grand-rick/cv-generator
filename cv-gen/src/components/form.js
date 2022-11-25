@@ -12,7 +12,7 @@ class Form extends Component {
         lastName: '',
         title: '',
         email: '',
-        avatar: '',
+        avatar: null,
         portfolio: '',
         bio: '',
         twitter: '',

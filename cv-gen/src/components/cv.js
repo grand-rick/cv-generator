@@ -8,9 +8,6 @@ const Line = () => {
         width: '60%',
         height: '.5rem',
         marginLeft: 'auto'
-        // position: 'absolute',
-        // right: 0,
-        // top: '6.8rem'
     }
 
     return (
@@ -73,7 +70,7 @@ const Cv = () => {
                     <div className='portfolio'>
                         <p>My Portfolio</p>
                         <div className='portfolio'>Portfolio: {portfolio} </div>
-                        <div className='twitter'>Twitter: {twitter}</div>
+                        <div className='twitter'>Twitter: @{twitter}</div>
                     </div>
                 </div>
                 <div className='education'>
@@ -81,8 +78,8 @@ const Cv = () => {
                     <div className='school'>
                         {schoolStart} - {schoolEnd} <br />
                         {school} <br />
-                        Degree: {course} <br />
-                        Grade: {grade} <br />
+                        Bachelor's degree in {course} <br />
+                        Honors: {grade} <br />
                     </div>
                     <div className='skills'>
                         <p>SKILLS</p>
